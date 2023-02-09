@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+import './styles.css';
 
-function App() {
+import * as React from 'react';
+
+import AddTodo from './components/AddTodo';
+import ThemeWrapper from './components/ThemeWrapper';
+import Todos from './containers/Todos';
+import ThemeProvider from './context/themeContext';
+import TodoProvider from './context/todoContext';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <ThemeProvider>
+      <TodoProvider>
+        <ThemeWrapper>
+          <main className="App">
+            <h1>My Todos</h1>
+            <AddTodo />
+            <Todos />
+          </main>
+        </ThemeWrapper>
+      </TodoProvider>
+    </ThemeProvider>
+  )
 }
 
-export default App;
+export default App
