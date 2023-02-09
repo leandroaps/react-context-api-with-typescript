@@ -1,0 +1,7 @@
+node_modules
+
+# IGNORED ARTIFACTS
+build
+coverage`
+reportWebVitals.ts
+react-app-env.d.ts
